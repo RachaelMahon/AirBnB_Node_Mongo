@@ -49,6 +49,14 @@ module.exports = function(app, passport) {
     });
 
     // =====================================
+    // MESSAGES ==============================
+    // =====================================
+
+    app.get('/messages', function(req, res) {
+        res.render('messages.ejs');
+    });
+
+    // =====================================
     // LOGOUT ==============================
     // =====================================
     app.get('/logout', function(req, res) {
@@ -62,6 +70,9 @@ module.exports = function(app, passport) {
       failureFlash : true // allow flash messages
   }));
 };
+
+
+
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
